@@ -12,7 +12,15 @@ public class InteractableObject : MonoBehaviour
         normalMaterial = GetComponent<MeshRenderer>().material;
     }
 
-    private void OnMouseOver(){
+    private void OnMouseDown(){
+        if(gameObject.GetComponent<Note>())
+        {
+            FromSceneToDiary.instance.ReplaseFromScene(this.gameObject);
+        }
+        
+    }
+
+    private void OnMouseEnter(){
         this.GetComponent<MeshRenderer>().material = hightlightMaterial;
     }
 
