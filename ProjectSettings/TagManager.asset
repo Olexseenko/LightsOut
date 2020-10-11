@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Questgiver
+  - Note
+  - Papers
   layers:
   - Default
   - TransparentFX
