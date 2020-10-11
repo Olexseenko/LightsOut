@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static Vector3 PlayerPosition { get; private set; }
+
     public enum State
     {
         Normal,
@@ -31,7 +33,9 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        switch(state)
+        PlayerPosition = transform.position;
+
+        switch (state)
         {
             case State.Normal:
                 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
