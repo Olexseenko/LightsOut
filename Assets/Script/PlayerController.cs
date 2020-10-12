@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
         UI,
     }
 
+    public static Vector3 playerPosition;
     private Rigidbody rigidbody;
     private Vector3 direction;
     private Vector3 pointToLook;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         switch(state)
         {
             case State.Normal:
+                playerPosition = GetComponent<Transform>().position;
                 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
                 if (Input.GetMouseButton(1))
                 {
