@@ -6,12 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     public enum State
     {
-        Normal,
+        normal,
         UI,
+        hide,
     }
 
     public static Vector3 playerPosition;
-    private Rigidbody rigidbody;
+    private Rigidbody rigidbodyPlayer;
     private Vector3 direction;
     private Vector3 pointToLook;
     
@@ -24,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbodyPlayer = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
-        state = State.Normal;
+        state = State.normal;
     }
 
     
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         switch(state)
         {
-            case State.Normal:
+            case State.normal:
                 playerPosition = GetComponent<Transform>().position;
                 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
                 if (Input.GetMouseButton(1))
@@ -47,6 +48,9 @@ public class PlayerController : MonoBehaviour
 
             case State.UI:
                 break;
+
+            case State.hide:
+                break;
         }
 
     }
@@ -54,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         switch(state)
         {
-            case State.Normal:
+            case State.normal:
                 if (direction.magnitude >= 0.1f)
                 {
                     SmoothRotate();
@@ -62,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
                 if (isMove)
                 {
-                    rigidbody.velocity = direction * moveSpeed;
+                    rigidbodyPlayer.velocity = direction * moveSpeed;
                 }
                 
 
