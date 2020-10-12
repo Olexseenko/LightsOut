@@ -13,9 +13,9 @@ public class InteractableObject : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if(gameObject.GetComponent<Note>())
+        if(gameObject.GetComponent<Note>() && CanTake())
         {
-            FromSceneToDiary.instance.ReplaseFromScene(this.gameObject);
+            FromSceneToDiary.instance.ReplaсeFromScene(this.gameObject);
         }
         
     }
@@ -26,5 +26,18 @@ public class InteractableObject : MonoBehaviour
 
     private void OnMouseExit(){
         this.GetComponent<MeshRenderer>().material = normalMaterial;
+    }
+
+    private bool CanTake()
+    {
+        Vector3 range = GetComponent<Transform>().position - PlayerController.playerPosition;
+        float distanse = range.magnitude;
+        Debug.Log("Distanse: " + distanse);
+
+        if(distanse <= 3)
+        {
+            return true;
+        }
+        return false;
     }
 }

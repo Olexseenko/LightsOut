@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d87723adae36c74ab7ae078070716d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note:
-    id: 1
-    description: The quest
+  text: {fileID: 0}
+  notePattern:
+    id: 0
+    title: Title
+    description: Description
