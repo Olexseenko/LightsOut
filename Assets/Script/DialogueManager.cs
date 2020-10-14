@@ -13,19 +13,18 @@ public class DialogueManager : MonoBehaviour
     private Text dialogueText;
 
     [SerializeField]
-    private GameObject dialogueUI;
+    private Animator animator;
 
     private Queue<string> sentences;
 
     void Start()
     {
-        dialogueUI.SetActive(false);
         sentences = new Queue<string>();
     }
 
     public void StartDialogue(DialoguePattern dialogue)
     {
-        dialogueUI.SetActive(true);
+        animator.SetBool("IsOpen", true);
         targetDialogue.text = dialogue.dialogueTargeter;
         sentences.Clear();
 
@@ -62,9 +61,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialoge()
+    public void EndDialoge()
     {
-        dialogueUI.SetActive(false);
+        animator.SetBool("IsOpen", false);
         
     }
 }

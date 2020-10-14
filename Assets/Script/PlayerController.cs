@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
         normal,
         UI,
         hide,
+        
     }
 
     public static Vector3 playerPosition;
@@ -36,13 +37,15 @@ public class PlayerController : MonoBehaviour
         switch(state)
         {
             case State.normal:
-                playerPosition = GetComponent<Transform>().position;
-                direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
                 if (Input.GetMouseButton(1))
                 {
                     isMove = false;
                 }
                 else isMove = true;
+
+                playerPosition = GetComponent<Transform>().position;
+                direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+                
                 
                 break;
 
