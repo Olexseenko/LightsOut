@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         paused = false;
-        player.state = PlayerController.State.Normal;
+        player.state = PlayerController.State.normal;
         pauseMenu.SetActive(false);
     }
 }
