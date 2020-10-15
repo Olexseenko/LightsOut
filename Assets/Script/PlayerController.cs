@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static Vector3 PlayerPosition { get; private set; }
+
     public enum State
     {
         normal,
@@ -34,7 +36,9 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        switch(state)
+        PlayerPosition = transform.position;
+
+        switch (state)
         {
             case State.normal:
                 if (Input.GetMouseButton(1))
