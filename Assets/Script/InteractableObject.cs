@@ -4,53 +4,99 @@ using UnityEngine;
 
 public class InteractableObject : MonoBehaviour
 {
+
+    public enum State
+    {
+        item,
+        animal,
+    }
+
     [SerializeField]
     private PlayerController player;
-    private Material hightlightMaterial;
-    private Material normalMaterial;
 
-    public float distanse = 3f;
+    private PlayerMovement playerMovement;
+
+    private Material hightlightMaterial;
+    private Material hightlightMaterialAnimals;
+    private Material normalMaterial;
+    
+
+    [SerializeField]
+    private DialoguePattern dialoguePattern;
+
+    
+    public State state = State.item;
+
+    public float interactionDistance = 3f;
 
     void Start(){
+        player = FindObjectOfType<PlayerController>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
         hightlightMaterial = Resources.Load<Material>(@"Materials/Hightlight");
+        hightlightMaterialAnimals = Resources.Load<Material>(@"Materials/HightlightAnimals");
         normalMaterial = GetComponent<MeshRenderer>().material;
     }
 
     private void OnMouseDown(){
-        if(gameObject.GetComponent<Note>() && CheckRange())
+        switch(state)
         {
-            FromSceneToDiary.instance.ReplaсeFromScene(this.gameObject);
-        }
+            case State.item:
 
-        if(gameObject.tag == "Box" && CheckRange() && (CanHideInBox() || player.state == PlayerController.State.hide))
-        {
-            Debug.Log("Inside box!");
-            float x = gameObject.transform.position.x;
-            float y = player.transform.position.y;
-            float z = gameObject.transform.position.z;
-            Vector3 newPosition = new Vector3(x, y, z);
-            Vector3 offset = new Vector3(x, y, z+gameObject.transform.localScale.z);
-            
-            if(player.state == PlayerController.State.normal)
+            if(gameObject.GetComponent<Note>() && CheckRange())
             {
-                player.transform.position = newPosition;
-                player.transform.rotation = gameObject.transform.rotation;
-                player.state = PlayerController.State.hide;
+                FromSceneToDiary.instance.ReplaсeFromScene(this.gameObject);
             }
-            else
+
+            if(gameObject.tag == "Box" && CheckRange() && (CanHideInBox() || player.state == PlayerController.State.hide))
             {
-                player.transform.position = offset;
-                player.state = PlayerController.State.normal;
+                Debug.Log("Inside box!");
+                float x = gameObject.transform.position.x;
+                float y = player.transform.position.y;
+                float z = gameObject.transform.position.z;
+                Vector3 newPosition = new Vector3(x, y, z);
+                Vector3 offset = new Vector3(x, y, z+gameObject.transform.localScale.z);
+
+                if(player.state == PlayerController.State.normal)
+                {
+                    player.transform.position = newPosition;
+                    player.transform.rotation = gameObject.transform.rotation;
+                    player.state = PlayerController.State.hide;
+                }
+                else
+                {
+                    player.transform.position = offset;
+                    player.state = PlayerController.State.normal;
+                }
+
+                Debug.Log("playerPosition: " + PlayerController.playerPosition);
+
             }
-            
-            Debug.Log("playerPosition: " + PlayerController.playerPosition);
-            
+
+            break;
+
+            case State.animal:
+            if(CheckRange())
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue(dialoguePattern);
+            }
+            break;
         }
+        
         
     }
 
     private void OnMouseEnter(){
-        this.GetComponent<MeshRenderer>().material = hightlightMaterial;
+        switch(state)
+        {
+            case State.item:
+            this.GetComponent<MeshRenderer>().material = hightlightMaterial;
+            break;
+
+            case State.animal:
+            this.GetComponent<MeshRenderer>().material = hightlightMaterialAnimals;
+            break;
+        }
+       
     }
 
     private void OnMouseExit(){
@@ -59,11 +105,12 @@ public class InteractableObject : MonoBehaviour
 
     private bool CheckRange()
     {
+        //Vector3 range = GetComponent<Transform>().position - PlayerMovement.playerPosition;
         Vector3 range = GetComponent<Transform>().position - PlayerController.playerPosition;
         float _distanse = range.magnitude;
         
 
-        if(_distanse <= distanse)
+        if(_distanse <= interactionDistance)
         {
             Debug.Log("Distanse: " + _distanse);
             return true;
