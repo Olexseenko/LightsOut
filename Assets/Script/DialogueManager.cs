@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
     private Queue<AudioClip> audioClip;
+
+    //public float waitBeforeAudio = 0.2f;
     
 
 
@@ -50,6 +52,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
         PlayNextAudio();
+        
     }
 
     public void DisplayNextSentence()
@@ -70,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayNextAudio()
     {
+        
         if(audioClip.Count == 0)
         {
             EndDialoge();
@@ -81,6 +85,7 @@ public class DialogueManager : MonoBehaviour
             audioClip.Dequeue();
             return;
         }
+        
         AudioClip audio = audioClip.Dequeue();
         audioSource.PlayOneShot(audio);
         
@@ -95,6 +100,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
+
 
     public void EndDialoge()
     {
