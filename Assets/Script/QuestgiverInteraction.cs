@@ -9,18 +9,31 @@ public class QuestgiverInteraction : MonoBehaviour
     [SerializeField] private GameObject questgiverUI;
     [SerializeField] private GameObject interactionUI;
     
+    private BoxCollider boxCollider;
+    private MeshRenderer mesh;
     //can Player open questgiver interfase or not
     private bool canOpenUI=false;
 
     private void Start(){
         questgiverUI.SetActive(false);
-        
+        boxCollider = gameObject.GetComponent<BoxCollider>();
+        mesh = gameObject.GetComponent<MeshRenderer>();
     }
 
     private void Update(){
-        if(Input.GetKeyDown(KeyCode.E) && canOpenUI == true){
-            OpenQuestgiverUI(true);
-            Debug.Log("Menu");
+        if(Input.GetKeyDown(KeyCode.E) && canOpenUI){
+            //OpenQuestgiverUI(true);
+            //Debug.Log("Menu");
+            boxCollider.enabled = false;
+            mesh.enabled = false;
+
+        }
+        if(Input.GetKeyDown(KeyCode.Q) && canOpenUI){
+            //OpenQuestgiverUI(true);
+            //Debug.Log("Menu");
+            mesh.enabled = true;
+            boxCollider.enabled = true;
+
         }
     }
 

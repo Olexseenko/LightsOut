@@ -105,8 +105,8 @@ public class InteractableObject : MonoBehaviour
 
     private bool CheckRange()
     {
-        //Vector3 range = GetComponent<Transform>().position - PlayerMovement.playerPosition;
-        Vector3 range = GetComponent<Transform>().position - PlayerController.playerPosition;
+        Vector3 range = GetComponent<Transform>().position - PlayerMovement.playerPosition;
+        //Vector3 range = GetComponent<Transform>().position - PlayerController.playerPosition;
         float _distanse = range.magnitude;
         
 
