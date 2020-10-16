@@ -20,4 +20,9 @@ public class RabbitAnimations : MonoBehaviour
     {
         animator.SetBool("IsMove", false);
     }
+
+    public void Attack()
+    {
+        Debug.Log("Attack");
+    }
 }

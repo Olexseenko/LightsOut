@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class InteractableObject : MonoBehaviour
 {
 
@@ -17,7 +18,7 @@ public class InteractableObject : MonoBehaviour
     private PlayerMovement playerMovement;
 
     private Material hightlightMaterial;
-    private Material hightlightMaterialAnimals;
+    
     private Material normalMaterial;
     
 
@@ -30,10 +31,11 @@ public class InteractableObject : MonoBehaviour
     public float interactionDistance = 3f;
 
     void Start(){
+        
         player = FindObjectOfType<PlayerController>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         hightlightMaterial = Resources.Load<Material>(@"Materials/Hightlight");
-        hightlightMaterialAnimals = Resources.Load<Material>(@"Materials/HightlightAnimals");
+        
         normalMaterial = GetComponent<MeshRenderer>().material;
     }
 
@@ -93,14 +95,24 @@ public class InteractableObject : MonoBehaviour
             break;
 
             case State.animal:
-            this.GetComponent<MeshRenderer>().material = hightlightMaterialAnimals;
+            this.GetComponent<Outline>().enabled = true;
             break;
         }
        
     }
 
     private void OnMouseExit(){
-        this.GetComponent<MeshRenderer>().material = normalMaterial;
+        switch(state)
+        {
+            case State.item:
+            this.GetComponent<MeshRenderer>().material = normalMaterial;
+            break;
+
+            case State.animal:
+            this.GetComponent<Outline>().enabled = false;
+            break;
+        }
+        
     }
 
     private bool CheckRange()
