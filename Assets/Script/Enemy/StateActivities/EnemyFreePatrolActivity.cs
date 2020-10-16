@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyFreePatrolActivity : IEnemyStateActivity
 {
@@ -12,6 +10,16 @@ public class EnemyFreePatrolActivity : IEnemyStateActivity
     {
         controller = _controller;
         startingPosition = controller.transform.position;
+    }
+
+    public void PreStartActivity()
+    {
+        // no activity
+    }
+
+    public void ChangeState(EnemyStates.State state)
+    {
+        controller.ChangeStateTo(state);
     }
 
     public void StateActivity()
@@ -26,7 +34,7 @@ public class EnemyFreePatrolActivity : IEnemyStateActivity
     {
         if (other.tag == "Player")
         {
-            controller.ChangeStateTo(EnemyStates.State.CHASE);
+            ChangeState(EnemyStates.State.CHASE);
             controller.target = other.gameObject;
         }
     }

@@ -30,6 +30,12 @@ public class EnemyMoveSettingsBuilder : IEnemyStateSetting
             case EnemyStates.State.CHASE:
                 SetForChase();
                 break;
+            case EnemyStates.State.ATTACK:
+                SetForAttack();
+                break;
+            case EnemyStates.State.SEEK:
+                SetForSeek();
+                break;
             default:
                 throw new Exception("No such state " + state);
         }
@@ -42,7 +48,7 @@ public class EnemyMoveSettingsBuilder : IEnemyStateSetting
         settingsCatalog.SetSpeed(instance.patrolSpeed);
     }
 
-    public void SetForFreePatrol()
+    public virtual void SetForFreePatrol()
     {
         settingsCatalog.SetUpdatePosition(true);
         settingsCatalog.SetUpdateRotation(false);
@@ -54,5 +60,19 @@ public class EnemyMoveSettingsBuilder : IEnemyStateSetting
         settingsCatalog.SetUpdatePosition(true);
         settingsCatalog.SetUpdateRotation(false);
         settingsCatalog.SetSpeed(instance.chaseSpeed);
+    }
+
+    public void SetForAttack()
+    {
+        settingsCatalog.SetUpdatePosition(true);
+        settingsCatalog.SetUpdateRotation(false);
+        settingsCatalog.SetSpeed(instance.chaseSpeed);
+    }
+
+    public void SetForSeek()
+    {
+        settingsCatalog.SetUpdatePosition(true);
+        settingsCatalog.SetUpdateRotation(false);
+        settingsCatalog.SetSpeed(instance.patrolSpeed);
     }
 }

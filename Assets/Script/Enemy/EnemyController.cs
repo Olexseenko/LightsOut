@@ -1,11 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(IStatesBuilder))]
+[RequireComponent(typeof(EnemyMoveController))]
+[RequireComponent(typeof(EnemyVisionController))]
 public class EnemyController : MonoBehaviour
 {
     public EnemyMoveController EnemyMoveController { get; protected set; }
+    public EnemyVisionController EnemyVisionController { get; protected set; }
 
     protected Dictionary<EnemyStates.State, IEnemyStateActivity> StatesDic = new Dictionary<EnemyStates.State, IEnemyStateActivity>();
+
+    protected IStatesBuilder StatesBuilder;
 
     [Header("Patrol variables")]
     public GameObject[] waypoints;
@@ -17,16 +25,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     protected EnemyStates.State state = EnemyStates.State.PATROL;
 
-    public EnemyController()
+    private void Awake()
     {
-        StatesDic.Add(EnemyStates.State.PATROL, new EnemyPatrolActivity(this));
-        StatesDic.Add(EnemyStates.State.CHASE, new EnemyChaseActivity(this));
+        StatesBuilder = GetComponent<IStatesBuilder>();
+        StatesDic = StatesBuilder.GetActivitiesDic(this);
+        EnemyMoveController = GetComponent<EnemyMoveController>();
+        EnemyVisionController = GetComponent<EnemyVisionController>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        EnemyMoveController = GetComponent<EnemyMoveController>();
     }
 
     // Update is called once per frame
@@ -37,6 +46,10 @@ public class EnemyController : MonoBehaviour
         if (StatesDic.TryGetValue(state, out currentActivity))
         {
             currentActivity.StateActivity();
+        }
+        else
+        {
+            throw new Exception($"Enemy {this.gameObject.name} have no activity {EnemyStates.StatesNames.First(_ => _.Key == state).Value}");
         }
 
         // only develop version
@@ -51,10 +64,29 @@ public class EnemyController : MonoBehaviour
         {
             currentActivity.TriggerEnterActivity(other);
         }
+        else
+        {
+            throw new Exception($"Enemy {this.gameObject.name} have no activity {EnemyStates.StatesNames.First(_ => _.Key == state).Value}");
+        }
     }
 
     public void ChangeStateTo(EnemyStates.State state)
     {
+        IEnemyStateActivity currentActivity;
+
+        if (StatesDic.TryGetValue(state, out currentActivity))
+        {
+            // Prepare state to be used
+            if (this.state != state)
+            {
+                currentActivity.PreStartActivity();
+            }
+        }
+        else
+        {
+            throw new Exception($"Enemy {this.gameObject.name} have no activity {EnemyStates.StatesNames.First(_ => _.Key == state).Value}");
+        }
+
         this.state = state;
         EnemyMoveController.ChangeStateTo(state);
     }

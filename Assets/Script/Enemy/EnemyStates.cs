@@ -1,9 +1,21 @@
-﻿public class EnemyStates
+﻿using System.Collections.Generic;
+
+public class EnemyStates
 {
     public enum State
     {
         PATROL,
         FREE_PATROL,
-        CHASE
+        CHASE,
+        ATTACK,
+        SEEK
     }
+
+    public static Dictionary<State, string> StatesNames = new Dictionary<State, string> {
+        { State.PATROL, "PATROL"},
+        { State.FREE_PATROL, "FREE_PATROL"},
+        { State.CHASE, "CHASE"},
+        { State.ATTACK, "ATTACK"},
+        { State.SEEK, "SEEK"}
+    };
 }

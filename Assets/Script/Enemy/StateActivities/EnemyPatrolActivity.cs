@@ -10,6 +10,16 @@ public class EnemyPatrolActivity : IEnemyStateActivity
         controller = _controller;
     }
 
+    public void ChangeState(EnemyStates.State state)
+    {
+        controller.ChangeStateTo(state);
+    }
+
+    public void PreStartActivity()
+    {
+        // no activity
+    }
+
     public void StateActivity()
     {
         if (Vector3.Distance(controller.transform.position, controller.waypoints[wayPointInd].transform.position) >= 1)
@@ -30,7 +40,7 @@ public class EnemyPatrolActivity : IEnemyStateActivity
     {
         if (other.tag == "Player")
         {
-            controller.ChangeStateTo(EnemyStates.State.CHASE);
+            ChangeState(EnemyStates.State.CHASE);
             controller.target = other.gameObject;
         }
     }
