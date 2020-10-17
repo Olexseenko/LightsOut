@@ -8,6 +8,7 @@ public class DoorTriggerArea : MonoBehaviour
     {
         close,
         open,
+        locked,
     }
     [SerializeField]
     private GameObject doorId;
