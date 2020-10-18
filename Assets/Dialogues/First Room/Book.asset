@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
-  m_Name: Cow
+  m_Name: Book
   m_EditorClassIdentifier: 
-  dialogueTargeter: Cow
-  sentences:
-  - "- \u041C\u0443\u0443\u0443\u0443"
-  audioClips:
-  - {fileID: 8300000, guid: fa7f0e45de465644184ed1f9b4cd74da, type: 3}
+  dialogueTargeter: My books
+  sentences: []
+  audioClips: []
