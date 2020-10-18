@@ -8,6 +8,10 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyVisionController))]
 public class EnemyController : MonoBehaviour
 {
+    public AudioClip audioClip;
+    [SerializeField]
+    public AudioSource audioSource;
+
     public EnemyMoveController EnemyMoveController { get; protected set; }
     public EnemyVisionController EnemyVisionController { get; protected set; }
 

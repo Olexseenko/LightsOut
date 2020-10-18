@@ -8,7 +8,8 @@ public class EnemyStates
         FREE_PATROL,
         CHASE,
         ATTACK,
-        SEEK
+        SEEK,
+        IDLE
     }
 
     public static Dictionary<State, string> StatesNames = new Dictionary<State, string> {
@@ -16,6 +17,7 @@ public class EnemyStates
         { State.FREE_PATROL, "FREE_PATROL"},
         { State.CHASE, "CHASE"},
         { State.ATTACK, "ATTACK"},
-        { State.SEEK, "SEEK"}
+        { State.SEEK, "SEEK"},
+        { State.IDLE, "IDLE"}
     };
 }

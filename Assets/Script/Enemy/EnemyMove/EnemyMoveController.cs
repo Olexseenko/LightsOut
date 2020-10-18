@@ -25,6 +25,18 @@ public class EnemyMoveController : MonoBehaviour
         agent.SetDestination(point);
     }
 
+    public bool IsPointReachable(Vector3 point)
+    {
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(point, path);
+        if (path.status == NavMeshPathStatus.PathComplete)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void ChangeStateTo(EnemyStates.State state)
     {
         var builder = new EnemyMoveSettingsBuilder(instance, agent); // recreate to change during debug by instance

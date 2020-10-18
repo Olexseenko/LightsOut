@@ -36,6 +36,9 @@ public class EnemyMoveSettingsBuilder : IEnemyStateSetting
             case EnemyStates.State.SEEK:
                 SetForSeek();
                 break;
+            case EnemyStates.State.IDLE:
+                // no changes
+                break;
             default:
                 throw new Exception("No such state " + state);
         }

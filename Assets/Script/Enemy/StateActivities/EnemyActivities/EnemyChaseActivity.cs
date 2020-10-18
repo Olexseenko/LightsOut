@@ -20,6 +20,8 @@ public class EnemyChaseActivity : IEnemyStateActivity
     public void PreStartActivity()
     {
         targetLostTimePoint = 0; // unset lost point
+
+        controller.audioSource.PlayOneShot(controller.audioClip);
     }
 
     public void StateActivity()
