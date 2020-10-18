@@ -48,6 +48,7 @@ public class DoorTriggerArea : MonoBehaviour
             case State.close:
                 if(Input.GetKeyDown(KeyCode.E) && canInteract)
                 {
+                    PlaySound(0);
                     GameEvents.current.DoorwayTriggerEnter(id);
                     state = State.open;
                 }
@@ -55,6 +56,7 @@ public class DoorTriggerArea : MonoBehaviour
             case State.open:
                 if(Input.GetKeyDown(KeyCode.E) && canInteract)
                 {
+                    PlaySound(1);
                     GameEvents.current.DoorwayTriggerExit(id);
                     state = State.close;
                 }

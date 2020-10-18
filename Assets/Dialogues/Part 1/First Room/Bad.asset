@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
-  m_Name: Book
+  m_Name: Bad
   m_EditorClassIdentifier: 
-  dialogueTargeter: My books
-  sentences: []
-  audioClips: []
+  dialogueTargeter: Bed
+  sentences:
+  - The bed was neatly made, as if no one had slept on it.
+  - ' - I always make the bed, as my mummy taught me.'
+  - Good boy.
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

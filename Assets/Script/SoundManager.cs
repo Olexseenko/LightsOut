@@ -6,11 +6,36 @@ public class SoundManager : MonoBehaviour
 {
     private static SoundManager instance;
 
+    public enum State
+    {
+        PART_1,
+        PART_1_1,
+        PART_2,
+        PART_2_1,
+        FIGHT,
+    }
     [SerializeField]
     private AudioSource audioSource;
 
-    public AudioClip audioClip;
-    
+    [SerializeField]
+    private AudioClip backgroundMusicPart_1;
+
+    [SerializeField]
+    private AudioClip backgroundMusicPart_1_1;
+
+    [SerializeField]
+    private AudioClip backgroundMusicPart_2;
+
+    [SerializeField]
+    private AudioClip backgroundMusicPart_2_1;
+
+    [SerializeField]
+    private AudioClip fightMusic;
+
+    public State state = State.PART_1;
+
+    private AudioClip currentMusic;
+
     void Awake()
     {
         if(instance == null)
@@ -27,12 +52,13 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        
+        audioSource.PlayOneShot(backgroundMusicPart_1);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FightBegin()
     {
-        
+        audioSource.Stop();
+        audioSource.PlayOneShot(fightMusic);
     }
+
 }

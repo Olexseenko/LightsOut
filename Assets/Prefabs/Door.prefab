@@ -265,8 +265,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 3643359911722997820}
+  triggerPrefab: {fileID: 0}
+  key: {fileID: 0}
   state: 0
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 07f6612949ec5154b9bdff2683a0798b, type: 3}
+  - {fileID: 8300000, guid: 6929d38434dd951418759a0f464de51c, type: 3}
   - {fileID: 8300000, guid: 70315129707919b489bf7ee9cf76296b, type: 3}
