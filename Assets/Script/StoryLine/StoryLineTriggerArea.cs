@@ -6,11 +6,18 @@ public class StoryLineTriggerArea : MonoBehaviour
 {
     public DialoguePattern dialogue;
     
+    [SerializeField]
+    private GameObject nextTrigger;
 
-    public void TriggerDialogue()
+    private void Start()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if(nextTrigger != null)
+            {
+                nextTrigger.SetActive(false);
+            }
     }
+
+    
 
     
 
@@ -18,8 +25,19 @@ public class StoryLineTriggerArea : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if(nextTrigger != null)
+            {
+                nextTrigger.SetActive(true);
+            }
+
             TriggerDialogue();
             Destroy(gameObject);
         }
+    }
+
+    public void TriggerDialogue()
+    {
+
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

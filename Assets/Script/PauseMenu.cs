@@ -3,12 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
+    [SerializeField] private PlayerMovement player;
     [SerializeField] private GameObject pauseMenu;
     private bool paused = false;
 
     private void Awake()
     {
+        player = FindObjectOfType<PlayerMovement>();
         pauseMenu.SetActive(false);
     }
     private void Update()
@@ -19,7 +20,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Time.timeScale = 0;
                 paused = true;
-                player.state = PlayerController.State.UI;
+                player.state = PlayerMovement.State.UI;
                 pauseMenu.SetActive(true);
             }
             else
@@ -30,8 +31,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void ExitToMenu()
     {
-        
-        //SceneManager.LoadScene("Menu");
+        SoundManager.instance.StopAll();
+        SceneManager.LoadScene("MainMenu");
     }
     public void Continue()
     {
@@ -42,7 +43,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         paused = false;
-        player.state = PlayerController.State.normal;
+        player.state = PlayerMovement.State.normal;
         pauseMenu.SetActive(false);
     }
 }

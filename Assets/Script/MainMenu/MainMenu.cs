@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     
+    [SerializeField]
+    private GameObject creatorUI;
+
+
+    private void Start()
+    {
+        creatorUI.SetActive(false);
+    }
+    
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -16,9 +25,9 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void Creaters()
+    public void Creators()
     {
-
+        creatorUI.SetActive(!creatorUI.activeSelf);
     }
 
     public void Exit()

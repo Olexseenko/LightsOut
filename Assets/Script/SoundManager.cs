@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private static SoundManager instance;
+    public static SoundManager instance;
 
     public enum State
     {
@@ -60,5 +60,11 @@ public class SoundManager : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(fightMusic);
     }
+
+   public void StopAll()
+   {
+       audioSource.Stop();
+   }
+
 
 }
