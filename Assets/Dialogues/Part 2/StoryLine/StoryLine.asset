@@ -20,7 +20,17 @@ MonoBehaviour:
   - It is the alien homeland, Another Planet. (don't ask me how I know)
   - Now we need to find your mom.
   - ' - But where can I find her?'
+  - And then, by an unimaginable accident, a rabbit appears.
+  - Fear covers, from this day on he has a phobia for rabbits.
+  - ' -  Don''t be afraid boy, I''ll take you to your mom.'
+  - What if he wants to have fun with us in his rabbit hole?
+  - ' - He doesn''t look like a villain, I believe him!'
   audioClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
