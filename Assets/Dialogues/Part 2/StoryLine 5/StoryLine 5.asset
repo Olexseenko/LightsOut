@@ -20,7 +20,7 @@ MonoBehaviour:
   - Take it easy, boy.
   - ' - Here I will definitely find and save my mother.'
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 1c51f28740657a146aac8b1cebadb2e1, type: 3}
+  - {fileID: 8300000, guid: d26726cf9c5efec49a4ccb5c5cd1139f, type: 3}
+  - {fileID: 8300000, guid: 7891ed32f015a474aa2d16981eb13614, type: 3}
+  - {fileID: 8300000, guid: 10d1ba55a7e0dc745845615c94c15ddf, type: 3}

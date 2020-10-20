@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: Bad
+  m_EditorClassIdentifier: 
+  dialogueTargeter: Bed
+  sentences:
+  - The bed was neatly made, as if no one had slept on it.
+  - ' - I always make the bed, as my mummy taught me.'
+  - Good boy.
+  audioClips:
+  - {fileID: 8300000, guid: 6c40f7037e4c15344908198d2ea71ba5, type: 3}
+  - {fileID: 8300000, guid: 2c9fd8968c5f11841ad7034f9fbffad2, type: 3}
+  - {fileID: 8300000, guid: 9c16cae747189f643ac8f32a14caa286, type: 3}

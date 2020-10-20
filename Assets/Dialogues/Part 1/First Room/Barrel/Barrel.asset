@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargeter: Barrel
   sentences:
-  - Why put a barrel in the bedroom at all?
+  - Who decided to put a barrel in the bedroom at all?
   - However, it does not matter!
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 6214d036c0ecacd46b6307dda3c69ea0, type: 3}
+  - {fileID: 8300000, guid: a7b52f4bb98f0a04991877ec8001fc88, type: 3}

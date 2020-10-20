@@ -19,6 +19,6 @@ MonoBehaviour:
   - ' - I don''t know what the fuck is going on, but I have to find her! My mommy!'
   - Stepping furtively to the portal, the boy touches it and...
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 0686a0d10b28a6941b25edf984788679, type: 3}
+  - {fileID: 8300000, guid: 4a686dc075a7e6d40b451d19f5c90289, type: 3}
+  - {fileID: 8300000, guid: 601cda42bdb5e1845982e51acf26216b, type: 3}

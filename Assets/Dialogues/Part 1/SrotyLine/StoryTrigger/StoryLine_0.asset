@@ -16,11 +16,12 @@ MonoBehaviour:
   sentences:
   - The sun is already high, the birds are singing, but our hero is in no hurry to
     wake up.
-  - '- Yes, I love to sleep! But I usually don''t sleep for so long, my mother will
-    always be there, but she didn''t wake me up today. Very strange!'
+  - " - Yes, I love to sleep (I\u2019m not NEET and Yeaa healthy sleep brings success
+    in life)! But I usually don't sleep so long, my mother always wakes me up, but
+    she hasn't done it today. Very strange!"
   - Indeed, there was never a day when the mother of this beautiful boy did not come
     and wake him up. Something has happened, and we have to find out!
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 7a3fb6e584402564895b48cdfd5c29a0, type: 3}
+  - {fileID: 8300000, guid: 0fd842ee2857ba74faa91ca9c887d643, type: 3}
+  - {fileID: 8300000, guid: d4cfc9c3a95205a45af0769f6947d0db, type: 3}

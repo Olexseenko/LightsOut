@@ -26731,9 +26731,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'DONE DURING
 
-    BEGINNERS CIRCLE JAM #3
-
-    by AngrySmile'
+    BEGINNERS CIRCLE JAM #3'
 --- !u!222 &1775793709
 CanvasRenderer:
   m_ObjectHideFlags: 0
