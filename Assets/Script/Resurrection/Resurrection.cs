@@ -11,7 +11,12 @@ public class Resurrection : MonoBehaviour
     private GameObject deathUI;
 
     public static Transform resPoint;
-    
+
+    void Awake()
+    {
+        player = FindObjectOfType<PlayerMovement>().transform;
+    }
+
     void Start()
     {
         deathUI.SetActive(false);
@@ -26,7 +31,6 @@ public class Resurrection : MonoBehaviour
 
     public void ReSpawn()
     {
-        Debug.Log("SHit");
         deathUI.SetActive(false);
         float x = resPoint.position.x;
         float y = player.position.y;

@@ -14,7 +14,7 @@ public class EnemyAttackActivity : IEnemyStateActivity
 
     public void ChangeState(EnemyStates.State state)
     {
-        controller.ChangeStateTo(EnemyStates.State.CHASE);
+        controller.ChangeStateTo(state);
     }
 
     public void PreStartActivity()
@@ -37,7 +37,11 @@ public class EnemyAttackActivity : IEnemyStateActivity
 
                 controller.target.GetComponent<PlayerMovement>().AttackRecevied();
 
-                attackTime = 0f; // reset attack
+                this.controller.transform.position = controller.waypoints[0].transform.position;
+
+                ChangeState(EnemyStates.State.PATROL);
+
+                //attackTime = 0f; // reset attack
             }
         }
         else

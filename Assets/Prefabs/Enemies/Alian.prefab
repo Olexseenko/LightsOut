@@ -6393,6 +6393,7 @@ GameObject:
   - component: {fileID: 4810866364095811785}
   - component: {fileID: 4810866364095811786}
   - component: {fileID: 4810866364095811787}
+  - component: {fileID: -5976837310641458856}
   m_Layer: 0
   m_Name: Alian
   m_TagString: Untagged
@@ -6518,7 +6519,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6657,6 +6658,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &-5976837310641458856
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810866363991119931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.0396423
+  m_Height: 8.062098
+  m_Direction: 1
+  m_Center: {x: 0.037750244, y: 3.4968004, z: 0}
 --- !u!1 &4810866363991119933
 GameObject:
   m_ObjectHideFlags: 0

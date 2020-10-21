@@ -42,7 +42,7 @@ public class EnemyPatrolActivity : IEnemyStateActivity
 
     public void TriggerEnterActivity(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<PlayerMovement>().state == PlayerMovement.State.normal)
         {
             ChangeState(EnemyStates.State.CHASE);
             controller.target = other.gameObject;
