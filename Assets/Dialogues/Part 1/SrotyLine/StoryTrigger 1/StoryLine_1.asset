@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueTargeter: 
   sentences:
   - The aroma of freshly brewed stew comes from the kitchen.
-  - Mom is probably in the kitchen, she is quite busy and forgot to wake me up.
+  - ' - Mom is probably in the kitchen, she is quite busy and forgot to wake me up.'
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: baf548ef1f9aac84a900bd5ea990d0e5, type: 3}
+  - {fileID: 8300000, guid: b40bb9935a04f6948929cde0be6fc71b, type: 3}

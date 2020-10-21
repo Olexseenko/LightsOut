@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargeter: 
   sentences:
-  - Dead silence reigns in the courtyard and there is a metallic smell of blood.
-  - Poor cows lie in the far corner, and near them there is a fierce beast, which,
-    in a fit of rage, tore their bodies to pieces.
+  - Dead silence was reigning over the courtyard which was full of metallic smell
+    of blood.
+  - Poor cows lie in their own blood in the farthest  corner, and near them there
+    was a furious beast, which, in a fit of rage, tore their bodies to pieces.
   - ' - My God, what happened here?'
-  - Leave questions for later, the killer is guarding something, maybe she will help
-    you find out where your mother has disappeared?
+  - Leave questions for later, the killer is guarding something, maybe it will help
+    to find out where your mom has disappeared?
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: a6a809937ee9ba844ab3af61d628c193, type: 3}
+  - {fileID: 8300000, guid: bc17c2f4ad3a54c4b827aca6dfdaf43b, type: 3}
+  - {fileID: 8300000, guid: 957685ca9363e41499044aa16e41ecd2, type: 3}
+  - {fileID: 8300000, guid: 760f6ae2758d15341bff4c16fd03677f, type: 3}

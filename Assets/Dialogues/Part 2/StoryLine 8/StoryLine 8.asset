@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: StoryLine 8
+  m_EditorClassIdentifier: 
+  dialogueTargeter: 
+  sentences:
+  - She was crying, shaking, her eyes were wide open and focused on the boy. Fear
+    and despair gave way to joy and hope.
+  - ' - I came to save you.'
+  - He rubbed the sphere and a portal appeared nearby.
+  - ' - Let''s get out of here'
+  audioClips:
+  - {fileID: 8300000, guid: c99212f78d3af7e479cd7f5611d028c0, type: 3}
+  - {fileID: 8300000, guid: 7ebc3ce78d6125f458434277d3c10775, type: 3}
+  - {fileID: 8300000, guid: 0037bf8e5d33c684d8d67268e70c91eb, type: 3}
+  - {fileID: 8300000, guid: 93b74576f3434ad46995d0117f45bb12, type: 3}

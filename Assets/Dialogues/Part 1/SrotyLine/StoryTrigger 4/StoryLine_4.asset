@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargeter: 
   sentences:
-  - Holding the sphere in his hand, the boy felt its warmth. He rubbed it lightly,
-    she made a high-pitched sound and the air began to electrify.
-  - ' - Ahh, what is it?'
-  - An explosion was heard in the kitchen.
+  - Holding the sphere in his hand, the boy felt its warmth. He rubbed it lightly
+    and it made a high-pitched sound and the air began to electrify.
+  - ' - Ahh, what is going on?'
+  - An explosion was heard from the kitchen.
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 70fc2e8f4f0db1e409a97e71e19636fe, type: 3}
+  - {fileID: 8300000, guid: 6ba5c00fc003bfd4a81347ccb643739c, type: 3}
+  - {fileID: 8300000, guid: c6d3ac34b0abf334c835b88e92229e11, type: 3}

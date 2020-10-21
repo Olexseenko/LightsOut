@@ -17,12 +17,18 @@ MonoBehaviour:
   - In the blink of an eye, our hero found himself in the middle of the desert, which
     goes far beyond the horizon.
   - ' - Where am I?'
-  - It is the alien homeland, Another Planet. (don't ask me how I know)
-  - Now we need to find your mom.
-  - ' - But where can I find her?'
+  - "This place is clearly associated with the kidnappers.\r\nAnd then, by an unimaginable
+    accident, a rabbit appears.\r"
+  - The boy is overwhelmed by fear, because from this day on he has a fear of rabbits.
+  - "\r - Don't be afraid boy, I'll take you to your mom.\r"
+  - "His voice was quiet and soothing.\r\nWhat if he wants to have fun with us in
+    his rabbit hole?\r"
+  - ' - He doesn''t look like a villain, I believe him!'
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: c73bc43598e58bc4a9b1b9a7f4f45e54, type: 3}
+  - {fileID: 8300000, guid: b26c3201336944d43a9532add2dee9ae, type: 3}
+  - {fileID: 8300000, guid: ca401a2b422ca1646a138f3527f3745c, type: 3}
+  - {fileID: 8300000, guid: d5a7055cbac8a0b47ac431b2f7e336cd, type: 3}
+  - {fileID: 8300000, guid: 09703359621b60d4abd65581996d030c, type: 3}
+  - {fileID: 8300000, guid: 02497780ca100ed42bd39a13838018df, type: 3}
+  - {fileID: 8300000, guid: 1e72d72ade2e333438bd6e4dcce54536, type: 3}

@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueTargeter: 
   sentences:
-  - In the kitchen, a pot of stew was emitting a bewitching aroma. But mom is not
-    here. Perhaps she went out into the yard?
-  - She probably feeds the cows. I'll go look for her in the yard.
+  - Kitchen was full of wonderful smells emitted by the pot with stew. But mom wasn't
+    there. Perhaps she went out into the yard?
+  - ' - She is probably feeding the cows at the moment. I should look for her in
+    the yard.'
   audioClips:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 39cdcee692d2c804f9c16a8bb2fadd5d, type: 3}
+  - {fileID: 8300000, guid: a4c5c149178b22b4fb3f6306aca0314f, type: 3}
