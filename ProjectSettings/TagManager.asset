@@ -9,6 +9,7 @@ TagManager:
   - Papers
   - Box
   - Animal
+  - Door
   layers:
   - Default
   - TransparentFX

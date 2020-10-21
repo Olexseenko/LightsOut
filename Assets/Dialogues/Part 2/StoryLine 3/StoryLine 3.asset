@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: StoryLine 3
+  m_EditorClassIdentifier: 
+  dialogueTargeter: 
+  sentences:
+  - The silence did not last long.
+  - ' - Without hesitation, I grabbed her and teleported to the base. Do not return
+    empty-handed.'
+  - ' - Good job! Now find out if she gives milk...'
+  - ' - Ah, they want to do brutal experiments on her. I must immediately save her.'
+  audioClips:
+  - {fileID: 8300000, guid: 7bc60daf0ed1e2e45acbe135a966ad81, type: 3}
+  - {fileID: 8300000, guid: aa9081002c3e0414c87b97d3360934b7, type: 3}
+  - {fileID: 8300000, guid: cb44795d60ad195459db55d1672179b4, type: 3}
+  - {fileID: 8300000, guid: 60ca4d329727e8145aa46574e1b31a4b, type: 3}

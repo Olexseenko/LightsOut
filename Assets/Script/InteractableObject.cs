@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Outline))]
+//[RequireComponent(typeof(Outline))]
 public class InteractableObject : MonoBehaviour
 {
 
@@ -37,6 +37,7 @@ public class InteractableObject : MonoBehaviour
         hightlightMaterial = Resources.Load<Material>(@"Materials/Hightlight");
         
         normalMaterial = GetComponent<MeshRenderer>().material;
+        this.GetComponent<MeshRenderer>().material = hightlightMaterial;
     }
 
     private void OnMouseDown(){
@@ -95,7 +96,8 @@ public class InteractableObject : MonoBehaviour
             break;
 
             case State.animal:
-            this.GetComponent<Outline>().enabled = true;
+            this.GetComponent<MeshRenderer>().material = hightlightMaterial;
+            //this.GetComponent<Outline>().enabled = true;
             break;
         }
        
@@ -109,7 +111,8 @@ public class InteractableObject : MonoBehaviour
             break;
 
             case State.animal:
-            this.GetComponent<Outline>().enabled = false;
+            this.GetComponent<MeshRenderer>().material = normalMaterial;
+            //this.GetComponent<Outline>().enabled = false;
             break;
         }
         

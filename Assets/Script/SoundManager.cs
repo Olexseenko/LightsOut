@@ -9,9 +9,7 @@ public class SoundManager : MonoBehaviour
     public enum State
     {
         PART_1,
-        PART_1_1,
         PART_2,
-        PART_2_1,
         FIGHT,
     }
     [SerializeField]
@@ -20,21 +18,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioClip backgroundMusicPart_1;
 
-    [SerializeField]
-    private AudioClip backgroundMusicPart_1_1;
+    
 
     [SerializeField]
     private AudioClip backgroundMusicPart_2;
-
-    [SerializeField]
-    private AudioClip backgroundMusicPart_2_1;
 
     [SerializeField]
     private AudioClip fightMusic;
 
     public State state = State.PART_1;
 
-    private AudioClip currentMusic;
+    private State currentState;
 
     void Awake()
     {
@@ -46,8 +40,7 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
+        currentState = state;
     }
 
     void Start()
@@ -57,14 +50,42 @@ public class SoundManager : MonoBehaviour
 
     public void FightBegin()
     {
-        audioSource.Stop();
-        audioSource.PlayOneShot(fightMusic);
+        currentState = state;
+        state = State.FIGHT;
+        CurrentPlay();
     }
 
-   public void StopAll()
-   {
+    public void FightOver()
+    {
+        state = currentState;
+        CurrentPlay();
+    }
+
+    public void StopAll()
+    {
        audioSource.Stop();
-   }
+    }
+
+    public void CurrentPlay()
+    {
+        switch(state)
+        {
+            case State.PART_1:
+            audioSource.Stop();
+            audioSource.PlayOneShot(backgroundMusicPart_1);
+            break;
+
+            case State.PART_2:
+            audioSource.Stop();
+            audioSource.PlayOneShot(backgroundMusicPart_2);
+            break;
+
+            case State.FIGHT:
+            audioSource.Stop();
+            audioSource.PlayOneShot(fightMusic);
+            break;
+        }
+    }
 
 
 }

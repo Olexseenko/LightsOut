@@ -19,7 +19,7 @@ public class InteractionUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         interactionUI.SetActive(false);
     }
 

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: StoryLine 1
+  m_EditorClassIdentifier: 
+  dialogueTargeter: 
+  sentences:
+  - The mysterious sphere again began to make a strange sound, and then some voices
+    began to appear in my head.
+  - ' - Report completed mission!'
+  - ' - Yes, sir! As usual, we found a small farm in the forest to steal a cow.'
+  - ' - With me was Gank and one of the killer fighting bunnies who kept us safe...'
+  - The voices broke off.
+  - " - What are these voices in my head? Why do they need our cows? Are they aliens?\r"
+  - It looks like it.
+  audioClips:
+  - {fileID: 8300000, guid: ffb6308feda22064d9bd8b83234c6142, type: 3}
+  - {fileID: 8300000, guid: d6b4a5aa1cc6f2441a4bab47e4239e57, type: 3}
+  - {fileID: 8300000, guid: 48b38c946f5f1b74ca7ff75c169f1863, type: 3}
+  - {fileID: 8300000, guid: 7b08c2d69a4b98d4498a95602f453d8a, type: 3}
+  - {fileID: 8300000, guid: 956c30927ad39754aa7c60667f354d78, type: 3}
+  - {fileID: 8300000, guid: cccb89d2300748846bb2d583a7acb8dc, type: 3}
+  - {fileID: 8300000, guid: 7e3a4dcacf1e88c4d8b9c17e2d9ea4fb, type: 3}
