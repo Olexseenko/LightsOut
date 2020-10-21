@@ -112,7 +112,7 @@ public class DoorTriggerArea : MonoBehaviour
         {
             return;
         }
-        Instantiate(TriggerPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(TriggerPrefab, spawnPoint.position, new Quaternion(0f,0f,0f,0f));
         
     }
 
