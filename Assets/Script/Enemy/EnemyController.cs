@@ -8,13 +8,17 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyVisionController))]
 public class EnemyController : MonoBehaviour
 {
-    public AudioClip audioClip;
+    public AudioClip attackClip;
+    public AudioClip chaseClip;
     [SerializeField]
     public AudioSource audioSource;
     public Animator animator;
 
+    public ScreemsControll ScreemsControll;
     public EnemyMoveController EnemyMoveController { get; protected set; }
     public EnemyVisionController EnemyVisionController { get; protected set; }
+
+    public SoundManager soundManager;
 
     protected Dictionary<EnemyStates.State, IEnemyStateActivity> StatesDic = new Dictionary<EnemyStates.State, IEnemyStateActivity>();
 
@@ -36,6 +40,8 @@ public class EnemyController : MonoBehaviour
         StatesDic = StatesBuilder.GetActivitiesDic(this);
         EnemyMoveController = GetComponent<EnemyMoveController>();
         EnemyVisionController = GetComponent<EnemyVisionController>();
+        soundManager = FindObjectOfType<SoundManager>();
+        ScreemsControll = GetComponent<ScreemsControll>();
     }
 
     // Start is called before the first frame update

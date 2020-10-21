@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ToMainMenu : MonoBehaviour
 {
+    private LvlLoader lvlLoader;
+
+    private void Awake()
+    {
+        lvlLoader = FindObjectOfType<LvlLoader>();
+    }
+    
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        lvlLoader.LoadSomeLvl(0);
     }
 }

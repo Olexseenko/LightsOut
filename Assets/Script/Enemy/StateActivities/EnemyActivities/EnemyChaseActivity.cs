@@ -21,7 +21,13 @@ public class EnemyChaseActivity : IEnemyStateActivity
     {
         targetLostTimePoint = 0; // unset lost point
 
-        controller.audioSource.PlayOneShot(controller.audioClip);
+        controller.GetComponent<SphereCollider>().enabled = false;
+
+        controller.ScreemsControll?.StartScreem();
+
+        controller.audioSource.PlayOneShot(controller.chaseClip);
+
+        controller.soundManager.FightBegin();
     }
 
     public void StateActivity()
@@ -35,7 +41,7 @@ public class EnemyChaseActivity : IEnemyStateActivity
         }
 
         // target far from you
-        if (Vector3.Distance(controller.target.transform.position, controller.transform.position) > 20f)
+        if (Vector3.Distance(controller.target.transform.position, controller.transform.position) > 6f)
         {
             var isSeen = controller.EnemyVisionController.IsTargetSeen(controller.target); // check if see target
 

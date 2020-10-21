@@ -5,12 +5,14 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private PlayerMovement player;
     [SerializeField] private GameObject pauseMenu;
+    private LvlLoader lvlLoader;
     private bool paused = false;
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
         pauseMenu.SetActive(false);
+        lvlLoader = FindObjectOfType<LvlLoader>();
     }
     private void Update()
     {
@@ -31,8 +33,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void ExitToMenu()
     {
+        TimeGo();
         SoundManager.instance.StopAll();
-        SceneManager.LoadScene("MainMenu");
+        lvlLoader.LoadSomeLvl(0);
     }
     public void Continue()
     {

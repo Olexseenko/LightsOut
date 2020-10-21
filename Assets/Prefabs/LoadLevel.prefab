@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3869469677556722997}
-  transitionTime: 1
+  transitionTime: 0.8
 --- !u!1 &6537953106832631697
 GameObject:
   m_ObjectHideFlags: 0

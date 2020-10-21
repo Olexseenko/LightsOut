@@ -17,7 +17,11 @@ public class EnemyPatrolActivity : IEnemyStateActivity
 
     public void PreStartActivity()
     {
-        // no activity
+        controller.GetComponent<SphereCollider>().enabled = true;
+
+        controller.ScreemsControll?.StopScreem();
+
+        controller.soundManager.FightOver();
     }
 
     public void StateActivity()
