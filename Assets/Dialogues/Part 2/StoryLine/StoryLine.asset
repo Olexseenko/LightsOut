@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: StoryLine
+  m_EditorClassIdentifier: 
+  dialogueTargeter: 
+  sentences:
+  - In the blink of an eye, our hero found himself in the middle of the desert, which
+    goes far beyond the horizon.
+  - ' - Where am I?'
+  - It is the alien homeland, Another Planet. (don't ask me how I know)
+  - Now we need to find your mom.
+  - ' - But where can I find her?'
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -11,14 +11,34 @@ public class DoorTriggerArea : MonoBehaviour
         locked,
     }
     [SerializeField]
-    private GameObject doorId;
+    private GameObject door;
+
+    [SerializeField]
+    private GameObject triggerPrefab;
+
+    [SerializeField]
+    private GameObject key;
+
+    
+
     private int id;
     private bool canInteract = false;
-    private State state = State.close;
+    public State state = State.close;
+
+
+    private AudioSource audioSource;
+    public AudioClip[] audioClips;
 
     private void Start()
     {
-        id = doorId.GetComponent<DoorController>().id;
+        id = door.GetComponent<DoorController>().id;
+        audioSource = door.GetComponent<AudioSource>();
+        if(key == null)
+        {
+            return;
+        }
+        key.SetActive(false);
+        
     }
 
     private void Update()
@@ -28,6 +48,7 @@ public class DoorTriggerArea : MonoBehaviour
             case State.close:
                 if(Input.GetKeyDown(KeyCode.E) && canInteract)
                 {
+                    PlaySound(0);
                     GameEvents.current.DoorwayTriggerEnter(id);
                     state = State.open;
                 }
@@ -35,8 +56,22 @@ public class DoorTriggerArea : MonoBehaviour
             case State.open:
                 if(Input.GetKeyDown(KeyCode.E) && canInteract)
                 {
+                    PlaySound(1);
                     GameEvents.current.DoorwayTriggerExit(id);
                     state = State.close;
+                }
+            break;
+
+            case State.locked:
+                if(Input.GetKeyDown(KeyCode.E) && canInteract)
+                {
+                    PlaySound(2);
+                    SpawnTrigger(door.gameObject.transform, triggerPrefab);
+                    if(key == null)
+                    {
+                        return;
+                    }
+                    key.SetActive(true);
                 }
             break;
         }
@@ -60,6 +95,30 @@ public class DoorTriggerArea : MonoBehaviour
             canInteract = false;
         }
         
+    }
+
+    private void PlaySound(int num)
+    {
+        if(audioClips[num] != null)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(audioClips[num]); 
+        }
+    }
+
+    public void SpawnTrigger(Transform spawnPoint, GameObject TriggerPrefab)
+    {
+        if(spawnPoint == null || TriggerPrefab == null)
+        {
+            return;
+        }
+        Instantiate(TriggerPrefab, spawnPoint.position, spawnPoint.rotation);
+        
+    }
+
+    public void OpenTheDoor()
+    {
+        state = State.close;
     }
     /*
     private void OnTriggerEnter(Collider other)
