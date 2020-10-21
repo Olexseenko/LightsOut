@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4c709131a6a142aa88a100d92157b, type: 3}
   m_Name: DefaultMoveInstance
   m_EditorClassIdentifier: 
-  patrolSpeed: 5
-  chaseSpeed: 10
+  patrolSpeed: 4
+  chaseSpeed: 4.8
   PointReachedDistance: 1

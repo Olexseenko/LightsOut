@@ -10,6 +10,20 @@ public class EnemyPatrolActivity : IEnemyStateActivity
         controller = _controller;
     }
 
+    public void ChangeState(EnemyStates.State state)
+    {
+        controller.ChangeStateTo(state);
+    }
+
+    public void PreStartActivity()
+    {
+        controller.GetComponent<SphereCollider>().enabled = true;
+
+        controller.ScreemsControll?.StopScreem();
+
+        controller.soundManager.FightOver();
+    }
+
     public void StateActivity()
     {
         if (Vector3.Distance(controller.transform.position, controller.waypoints[wayPointInd].transform.position) >= 1)
@@ -28,9 +42,9 @@ public class EnemyPatrolActivity : IEnemyStateActivity
 
     public void TriggerEnterActivity(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<PlayerMovement>().state == PlayerMovement.State.normal)
         {
-            controller.ChangeStateTo(EnemyStates.State.CHASE);
+            ChangeState(EnemyStates.State.CHASE);
             controller.target = other.gameObject;
         }
     }

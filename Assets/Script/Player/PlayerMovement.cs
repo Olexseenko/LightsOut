@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 pointToLook;
     
     private Camera mainCamera;
+    private Resurrection resurrection;
     public float moveSpeed = 6f;
     
     bool isMove = true;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbodyPlayer = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
+        resurrection = FindObjectOfType<Resurrection>();
         state = State.normal;
     }
 
@@ -116,5 +118,11 @@ public class PlayerMovement : MonoBehaviour
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
 
         }
+    }
+
+    public void AttackRecevied()
+    {
+        state = State.hide;
+        resurrection.PlayerDied();
     }
 }
