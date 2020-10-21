@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71d4c709131a6a142aa88a100d92157b, type: 3}
-  m_Name: DefaultMoveInstance
+  m_Name: GuideMoveInstance
   m_EditorClassIdentifier: 
-  patrolSpeed: 4
-  chaseSpeed: 4.8
+  patrolSpeed: 5.8
+  chaseSpeed: 5
   PointReachedDistance: 1

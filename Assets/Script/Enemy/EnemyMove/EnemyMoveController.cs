@@ -54,6 +54,16 @@ public class EnemyMoveController : MonoBehaviour
         return true;
     }
 
+    public void StopMoving()
+    {
+        agent.isStopped = true;
+    }
+
+    public void ContinueMoving()
+    {
+        agent.isStopped = false;
+    }
+
     public void ChangeStateTo(EnemyStates.State state)
     {
         var builder = new EnemyMoveSettingsBuilder(instance, agent); // recreate to change during debug by instance
