@@ -35,6 +35,11 @@ public class DoorController : MonoBehaviour
         }
     }
 
+    public void Open()
+    {
+        OnDoorOpen(id);
+    }
+
     private void OnDestroy()
     {
         GameEvents.current.onDoorwayTriggerEnter -= OnDoorOpen;

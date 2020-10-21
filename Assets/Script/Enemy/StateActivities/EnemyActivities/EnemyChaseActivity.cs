@@ -35,7 +35,7 @@ public class EnemyChaseActivity : IEnemyStateActivity
         }
 
         // target far from you
-        if (Vector3.Distance(controller.target.transform.position, controller.transform.position) > 5f)
+        if (Vector3.Distance(controller.target.transform.position, controller.transform.position) > 20f)
         {
             var isSeen = controller.EnemyVisionController.IsTargetSeen(controller.target); // check if see target
 
@@ -47,6 +47,20 @@ public class EnemyChaseActivity : IEnemyStateActivity
             else
             {
                 // if can't see
+
+                RaycastHit hit;
+                // Does the ray intersect any objects excluding the player layer
+                if (Physics.Raycast(controller.transform.position, controller.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+                {
+                    Debug.DrawRay(controller.transform.position, controller.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+
+                    if (hit.collider.gameObject.tag == "Door")
+                    {
+                        hit.collider.gameObject.GetComponent<DoorController>().Open();
+                    }
+                }
+
+
                 if (targetLostTimePoint == 0)
                 {
                     // set stop time

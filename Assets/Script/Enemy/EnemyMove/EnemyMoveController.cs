@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -22,6 +23,11 @@ public class EnemyMoveController : MonoBehaviour
 
     public void MoveToPoint(Vector3 point)
     {
+        if (agent.velocity.normalized != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+        }
+
         agent.SetDestination(point);
     }
 
@@ -35,6 +41,17 @@ public class EnemyMoveController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public bool IsMoving()
+    {
+        var velocity = agent.velocity;
+        if (Math.Abs(velocity.x) < 0.2 && Math.Abs(velocity.y) < 0.2 && Math.Abs(velocity.z) < 0.2 )
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public void ChangeStateTo(EnemyStates.State state)

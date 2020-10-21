@@ -10,6 +10,7 @@ public class EnemyVisionController : MonoBehaviour
 
         if (hit.collider != null)
         {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             if (hit.collider.gameObject == target.gameObject)
             {
                 return true;

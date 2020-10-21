@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip audioClip;
     [SerializeField]
     public AudioSource audioSource;
+    public Animator animator;
 
     public EnemyMoveController EnemyMoveController { get; protected set; }
     public EnemyVisionController EnemyVisionController { get; protected set; }
@@ -45,6 +46,15 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EnemyMoveController.IsMoving())
+        {
+            animator.SetBool("IsMove", true);
+        }
+        else
+        {
+            animator.SetBool("IsMove", false);
+        }
+
         IEnemyStateActivity currentActivity;
 
         if (StatesDic.TryGetValue(state, out currentActivity))
