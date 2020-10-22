@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: 0cfa667be1a5a674dbe1b285bd40d882
+  - enabled: 1
+    path: Assets/Scenes/Part 3.unity
+    guid: cdcbaad58530b8446ae2edabd1b7b117
+  - enabled: 0
+    path: Assets/Scenes/ForScreenshots.unity
+    guid: b8a4106d7b9649a4180d70b79c750505
   m_configObjects: {}

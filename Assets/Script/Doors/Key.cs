@@ -9,12 +9,48 @@ public class Key : MonoBehaviour
 
     [SerializeField]
     private GameObject triggerPrefab;
+    
+    private PlayerMovement playerMovement;
+
+    public float interactionDistance = 3f;
+
+    void Start(){
+        
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        
+    }
 
     private void OnMouseDown()
     {
-        door.OpenTheDoor();
-        door.SpawnTrigger(gameObject.transform, triggerPrefab);
-        gameObject.SetActive(false);
+        if(CheckRange())
+        {
+           door.OpenTheDoor();
+           if(triggerPrefab != null){
+               door.SpawnTrigger(gameObject.transform, triggerPrefab);
+           }
+            
+            gameObject.SetActive(false); 
+        }
+        
     }
 
+
+    private bool CheckRange()
+    {
+        Vector3 range = GetComponent<Transform>().position - PlayerMovement.playerPosition;
+        //Vector3 range = GetComponent<Transform>().position - PlayerController.playerPosition;
+        float _distanse = range.magnitude;
+        
+
+        if(_distanse <= interactionDistance)
+        {
+            Debug.Log("Distanse: " + _distanse);
+            return true;
+        }
+        else
+        {
+           Debug.Log("Out of range! Distanse: " + _distanse); 
+        }
+        return false;
+    }
 }

@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 5597250163566825474}
-  backgroundMusicPart_1: {fileID: 8300000, guid: dc72057ee71316446afb793c81e552e9, type: 3}
-  backgroundMusicPart_2: {fileID: 8300000, guid: c4dbd5c162a1be240acf7a14b7991f60, type: 3}
+  backgroundMusicPart_1: {fileID: 8300000, guid: 46e3cedc6166f1b40bf5f2c4d8880a4d, type: 3}
+  backgroundMusicPart_2: {fileID: 8300000, guid: 687f6cb84a5703041930e42a6237dd46, type: 3}
   fightMusic: {fileID: 8300000, guid: 7d7e52a12ae1bbd4cbc7faf89de54e1f, type: 3}
   state: 0
 --- !u!82 &5597250163566825474
