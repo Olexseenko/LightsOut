@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case State.hide:
+            animator.SetBool("IsMove", false);
                 break;
         }
 

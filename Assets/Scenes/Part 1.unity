@@ -55462,6 +55462,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5597250163566825472, guid: 2726c53344f7547409e8fa39ac020298, type: 3}
+      propertyPath: backgroundMusicPart_1
+      value: 
+      objectReference: {fileID: 8300000, guid: 46e3cedc6166f1b40bf5f2c4d8880a4d, type: 3}
+    - target: {fileID: 5597250163566825472, guid: 2726c53344f7547409e8fa39ac020298, type: 3}
+      propertyPath: backgroundMusicPart_2
+      value: 
+      objectReference: {fileID: 8300000, guid: 687f6cb84a5703041930e42a6237dd46, type: 3}
     - target: {fileID: 5597250163566825473, guid: 2726c53344f7547409e8fa39ac020298, type: 3}
       propertyPath: m_Name
       value: SoundManager
