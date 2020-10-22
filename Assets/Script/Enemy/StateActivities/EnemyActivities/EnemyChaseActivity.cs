@@ -3,7 +3,7 @@
 public class EnemyChaseActivity : IEnemyStateActivity
 {
     public EnemyController controller;
-    protected float attackRange = 1f;
+    protected float attackRange = 1.5f;
     protected float targetLostTime = 3f; // 3 sec keep chasing
     protected float targetLostTimePoint = 0f; // stop chasing point
 
