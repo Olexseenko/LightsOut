@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackClip: {fileID: 8300000, guid: 503b677f3adbe404a8859945874df68e, type: 3}
-  chaseClip: {fileID: 8300000, guid: 3ef23a25b20be77428c0a568a6116c08, type: 3}
+  chaseClip: {fileID: 8300000, guid: 67c3af46a4715244c8c3156ce1815fa0, type: 3}
   audioSource: {fileID: 2815739550579344200}
   animator: {fileID: 4229146037117910932}
   ScreemsControll: {fileID: 0}
