@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9166692dd7bb14c8572b7199002c2d, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  dialogueTargeter: 
+  sentences:
+  - The rabbit sincerely apologized to the cow for the fact that his subordinate
+    killed her fellows.
+  - ' - I apologize with all my heart, we will do everything to make amends, right?'
+  - ' - Yes, please forgive me. I don''t know what came over me.'
+  - ' - Mooooo'
+  audioClips:
+  - {fileID: 8300000, guid: 48601e7abe0c09749a07909f5ceb2cf9, type: 3}
+  - {fileID: 8300000, guid: aa2991a73e5c8654d9943088db17b8b5, type: 3}
+  - {fileID: 8300000, guid: a081295a3d49d564aa90a2c20d24591e, type: 3}
+  - {fileID: 8300000, guid: fa7f0e45de465644184ed1f9b4cd74da, type: 3}

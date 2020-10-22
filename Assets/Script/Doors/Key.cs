@@ -25,7 +25,10 @@ public class Key : MonoBehaviour
         if(CheckRange())
         {
            door.OpenTheDoor();
-            door.SpawnTrigger(gameObject.transform, triggerPrefab);
+           if(triggerPrefab != null){
+               door.SpawnTrigger(gameObject.transform, triggerPrefab);
+           }
+            
             gameObject.SetActive(false); 
         }
         
